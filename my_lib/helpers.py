@@ -2,6 +2,7 @@ import os
 import numpy as np
 import tensorflow as tf
 from matplotlib import pyplot as plt
+import tensorflow_probability as tfp
 
 
 def make_id(params):
@@ -79,7 +80,7 @@ def plot_z(z, c=None, title="", zname="z*", dims=[0,1], alpha=0.5):
     plt.colorbar()
     
     
-import tensorflow_probability as tfp
+
 def walk_ld(model,
             decoder,
             xrng= (0.025, 0.975),

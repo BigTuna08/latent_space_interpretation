@@ -8,10 +8,7 @@ def save_datasets(loc, data, names):
     assert len(data) == len(names), "Each data needs 1 name!"
     
     data_loc = os.path.join(loc, "data")
-    
-    for l in [loc, data_loc]:
-        try: os.makedirs(l)
-        except: pass
+    os.makedirs(data_loc, exist_ok=True)    
         
     for name, d in zip(names, data):
         np.save(os.path.join(data_loc, name), d)
@@ -33,12 +30,8 @@ def load_datasets(loc):
 def save_models(loc, models):
     
     model_loc = os.path.join(loc, "models")
-    
-    for l in [loc, model_loc]:
-        try: os.makedirs(l)
-        except: pass
-    
-    
+    os.makedirs(model_loc, exist_ok=True)
+
     for m in models:
         m.save(os.path.join(model_loc, m.name))
       
@@ -58,15 +51,13 @@ def load_models(loc):
 def save_ilvm(ilvm, loc):
     
     networks = ["recnet", "srn", "gm1", "gm2", "gm3"]
-    settings = ["beta", "gamma", "kappa", "flow_depth"]
+    settings = ["beta", "gamma", "flow_depth"]
     
     settings_loc = loc + "/settings.txt"
     track_loc = loc + "/track.txt"
     
-    
-    try: os.mkdir(loc)
-    except: pass
-        
+    os.makedirs(loc, exist_ok=True)
+
     
     models = [ilvm.__getattribute__(net) for net in networks]
     save_models(loc, models)
