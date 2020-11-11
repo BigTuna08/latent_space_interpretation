@@ -5,3 +5,4 @@ The digit_thick notebooks use the MNIST dataset, the digit_rotation notebooks us
 
 To run the experiments for a given dataset, you must run the 3 notebooks in order. The first (ending in dataset) will set up the dataset. The second (ending in vae) creates and trains the VAE. The final (ending in lens) creates and trains the lens model. 
 
+The remaining notebook, "normalizing_flows_density_estimation", runs a experiment using normalizing flows for density estimation.
