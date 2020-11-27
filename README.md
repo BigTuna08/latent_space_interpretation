@@ -8,3 +8,5 @@ To run the experiments for a given dataset, you must run the 3 notebooks in orde
 The thickness notebooks are the most heavily commented, and are a good place to start.
 
 The remaining notebook, "normalizing_flows_density_estimation", runs a experiment using normalizing flows for density estimation.
+
+This project was completed as part of the mitacs[https://www.mitacs.ca/en/programs/accelerate] accelerate program, with Verafin[https://verafin.com/] as a partner. 
